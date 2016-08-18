@@ -1,0 +1,25 @@
+CHANGELOG : zephyr
+
+dev
+
+    * creating initial zephyr.db schema 
+
+2016/08/17 v0.0.1	
+
+    + created generic directory structure, which includes build, data, 
+      documentation, documentation/html, documentation/latex, extras, 
+      figures, include, source, tarballs, and tests
+    + added README, CHANGELOG, TODO, NOTES, and Makefile
+    + added source/zephyr.py 
+    + initialized local git repo on ivymike
+    + setup remote github repo at https://github.com/mkandes/zephyr
+    + made first commit
+
+2015/07/22 v0.0.0
+
+    Hi Frank, I'd be interested. - Marty
+
+2015/07/21
+
+    Do we have anybody among us who wants to become an AWS expert?
+    If yes, please speak up asap. - Frank

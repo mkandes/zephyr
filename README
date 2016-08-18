@@ -1,0 +1,28 @@
+README : zephyr
+
+NAME
+
+    zephyr - make your batch system soar to the clouds
+
+DESCRIPTION
+    
+    zephyr is service that provisions cloud-based computing resources
+    to augment fixed-resource batch systems based on user job demand.
+
+STATUS
+
+    prototyping
+
+OPTIONS
+
+USAGE
+
+NOTES
+
+AUTHOR
+
+    Marty Kandes, Ph.D. (mkandes@sdsc.edu)
+    Service Operator / Software Developer
+    Distributed High-Throughput Computing Group
+    San Diego Supercomputer Center
+    University of California, San Diego
