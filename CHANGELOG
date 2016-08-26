@@ -4,6 +4,12 @@ dev
 
     * creating initial default database initialization
 
+2016/08/26 v0.0.3
+
+    + updated zephyr_db_schema.xml to reflect the current state of the
+      zephyr_db_schema.sql, except for the 5-way composite foreign key 
+      in the request table
+
 2016/08/25 v0.0.2
 
     + source/zephyr_db_schema.sql; initial database schema for 

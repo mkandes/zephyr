@@ -37,59 +37,7 @@
 		<type label="SET" length="1" sql="SET" quote=""/>
 		<type label="Bit" length="0" sql="bit" quote=""/>
 	</group>
-</datatypes><table x="56" y="225" name="account">
-<row name="account_id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="account_name" null="1" autoincrement="0">
-<datatype>MEDIUMTEXT</datatype>
-<default>NULL</default></row>
-<row name="account_number" null="1" autoincrement="0">
-<datatype>MEDIUMTEXT</datatype>
-<default>NULL</default></row>
-<row name="account_provider_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="provider" row="provider_id" />
-</row>
-<key type="PRIMARY" name="">
-<part>account_id</part>
-</key>
-</table>
-<table x="417" y="35" name="region">
-<row name="region_id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="region_name" null="1" autoincrement="0">
-<datatype>MEDIUMTEXT</datatype>
-<default>NULL</default></row>
-<row name="region_provider_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="provider" row="provider_id" />
-</row>
-<key type="PRIMARY" name="">
-<part>region_id</part>
-</key>
-</table>
-<table x="411" y="224" name="network">
-<row name="network_id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="network_name" null="1" autoincrement="0">
-<datatype>MEDIUMTEXT</datatype>
-<default>NULL</default></row>
-<row name="network_region_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="region" row="region_id" />
-</row>
-<row name="network_account_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="account" row="account_id" />
-</row>
-<key type="PRIMARY" name="">
-<part>network_id</part>
-</key>
-</table>
-<table x="68" y="37" name="provider">
+</datatypes><table x="51" y="51" name="provider">
 <row name="provider_id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -100,68 +48,76 @@
 <part>provider_id</part>
 </key>
 </table>
-<table x="816" y="35" name="zone">
-<row name="zone_id" null="1" autoincrement="1">
+<table x="600" y="51" name="region">
+<row name="region_id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="zone_name" null="1" autoincrement="0">
+<row name="region_provider_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="provider" row="provider_id" />
+</row>
+<row name="region_name" null="1" autoincrement="0">
 <datatype>MEDIUMTEXT</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>region_id</part>
+</key>
+</table>
+<table x="1150" y="51" name="zone">
+<row name="zone_id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <row name="zone_region_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="region" row="region_id" />
 </row>
+<row name="zone_name" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
+<default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>zone_id</part>
 </key>
 </table>
-<table x="332" y="691" name="job">
-<row name="job_id" null="1" autoincrement="1">
+<table x="51" y="251" name="account">
+<row name="account_id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="job_cluster_id" null="1" autoincrement="0">
+<row name="account_provider_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="job_process_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="job_submit_host_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="submit_host" row="submit_host_id" />
+<default>NULL</default><relation table="provider" row="provider_id" />
 </row>
-<row name="job_user_id" null="1" autoincrement="0">
+<row name="account_name" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
+<default>NULL</default></row>
+<row name="account_number" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>account_id</part>
+</key>
+</table>
+<table x="650" y="252" name="network">
+<row name="network_id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="user" row="user_id" />
-</row>
-<row name="job_account_id" null="1" autoincrement="0">
+<default>NULL</default></row>
+<row name="network_account_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="account" row="account_id" />
 </row>
-<row name="job_request_cpus" null="1" autoincrement="0">
+<row name="network_region_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="job_request_memory" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="job_request_disk" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="job_request_walltime" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="job_status" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="region" row="region_id" />
+</row>
+<row name="network_name" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
-<part>job_id</part>
+<part>network_id</part>
 </key>
 </table>
-<table x="807" y="229" name="subnet">
+<table x="1250" y="252" name="subnet">
 <row name="subnet_id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="subnet_name" null="1" autoincrement="0">
-<datatype>MEDIUMTEXT</datatype>
 <default>NULL</default></row>
 <row name="subnet_zone_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
@@ -171,11 +127,30 @@
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="network" row="network_id" />
 </row>
+<row name="subnet_name" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
+<default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>subnet_id</part>
 </key>
 </table>
-<table x="67" y="647" name="user">
+<table x="701" y="503" name="firewall">
+<row name="firewall_id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="firewall_network_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="network" row="network_id" />
+<relation table="region" row="region_id" />
+</row>
+<row name="firewall_name" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>firewall_id</part>
+</key>
+</table>
+<table x="53" y="802" name="user">
 <row name="user_id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -189,7 +164,7 @@
 <part>user_id</part>
 </key>
 </table>
-<table x="30" y="468" name="account_permission">
+<table x="52" y="502" name="account_permission">
 <row name="account_permission_id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -205,7 +180,83 @@
 <part>account_permission_id</part>
 </key>
 </table>
-<table x="970" y="419" name="machine_type">
+<table x="1301" y="1000" name="manager_host">
+<row name="manager_host_id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="manager_host_hostname" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
+<default>NULL</default></row>
+<row name="manager_host_ip_address" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>manager_host_id</part>
+</key>
+</table>
+<table x="52" y="1502" name="submit_host">
+<row name="submit_host_id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="submit_host_hostname" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
+<default>NULL</default></row>
+<row name="submit_host_ip_address" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>submit_host_id</part>
+</key>
+</table>
+<table x="65" y="998" name="job">
+<row name="job_id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="job_submit_host_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="submit_host" row="submit_host_id" />
+</row>
+<row name="job_account_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="account" row="account_id" />
+<relation table="account" row="account_id" />
+</row>
+<row name="job_user_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="user" row="user_id" />
+</row>
+<row name="job_validation_time" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="job_cluster_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="job_process_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="job_request_cpus" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="job_request_memory" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="job_request_disk" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="job_request_walltime" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="job_status" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="job_queue_time" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>job_id</part>
+</key>
+</table>
+<table x="1299" y="502" name="machine_type">
 <row name="machine_type_id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -229,37 +280,28 @@
 <part>machine_type_id</part>
 </key>
 </table>
-<table x="1205" y="134" name="price">
+<table x="1701" y="52" name="price">
 <row name="price_id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="price_type" null="1" autoincrement="0">
-<datatype>MEDIUMTEXT</datatype>
-<default>NULL</default></row>
-<row name="price_machine_type_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="machine_type" row="machine_type_id" />
-</row>
 <row name="price_zone_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="zone" row="zone_id" />
 </row>
+<row name="price_machine_type_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="machine_type" row="machine_type_id" />
+</row>
 <row name="price_ask" null="1" autoincrement="0">
 <datatype>DECIMAL</datatype>
-<default>NULL</default></row>
-<row name="price_last_updated" null="1" autoincrement="0">
-<datatype>TIMESTAMP</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>price_id</part>
 </key>
 </table>
-<table x="1152" y="1013" name="image">
+<table x="602" y="800" name="image">
 <row name="image_id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="image_name" null="1" autoincrement="0">
-<datatype>MEDIUMTEXT</datatype>
 <default>NULL</default></row>
 <row name="image_account_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
@@ -268,68 +310,103 @@
 <row name="image_region_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="region" row="region_id" />
+<relation table="region" row="region_id" />
 </row>
+<row name="image_name" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
+<default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>image_id</part>
 </key>
 </table>
-<table x="750" y="1039" name="keypair">
+<table x="1151" y="802" name="keypair">
 <row name="keypair_id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="keypair_name" null="1" autoincrement="0">
-<datatype>MEDIUMTEXT</datatype>
-<default>NULL</default></row>
-<row name="keypair_acccount_id" null="1" autoincrement="0">
+<row name="keypair_account_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="account" row="account_id" />
 </row>
-<row name="key pair_region_id" null="1" autoincrement="0">
+<row name="keypair_region_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="region" row="region_id" />
 </row>
+<row name="keypair_name" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
+<default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>keypair_id</part>
 </key>
 </table>
-<table x="410" y="447" name="firewall">
-<row name="firewall_id" null="1" autoincrement="1">
+<table x="651" y="1001" name="request">
+<row name="request_id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="firewall_name" null="1" autoincrement="0">
-<datatype>MEDIUMTEXT</datatype>
-<default>NULL</default></row>
-<row name="firewall_type" null="1" autoincrement="0">
-<datatype>MEDIUMTEXT</datatype>
-<default>NULL</default></row>
-<row name="firewall_network_id" null="1" autoincrement="0">
+<row name="request_job_submit_host_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="network" row="network_id" />
+<default>NULL</default></row>
+<row name="request_job_account_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="request_job_user_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="request_job_validation_time" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="request_job_cluster_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="request_manager_host_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="manager_host" row="manager_host_id" />
+</row>
+<row name="request_manager_machine_type_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="machine_type" row="machine_type_id" />
+</row>
+<row name="request_subnet_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="subnet" row="subnet_id" />
+</row>
+<row name="request_firewall_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="firewall" row="firewall_id" />
+</row>
+<row name="request_image_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="image" row="image_id" />
+</row>
+<row name="request_keypair_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="keypair" row="keypair_id" />
+</row>
+<row name="request_bid" null="1" autoincrement="0">
+<datatype>DECIMAL</datatype>
+<default>NULL</default></row>
+<row name="request_count" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="request_status" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="request_time" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>request_id</part>
+</key>
+</table>
+<table x="1301" y="1501" name="machine">
+<row name="machine_id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="machine_request_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="request" row="request_id" />
 </row>
 <key type="PRIMARY" name="">
-<part>firewall_id</part>
-</key>
-</table>
-<table x="49" y="950" name="submit_host">
-<row name="submit_host_id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="submit_host_hostname" null="1" autoincrement="0">
-<datatype>MEDIUMTEXT</datatype>
-<default>NULL</default></row>
-<key type="PRIMARY" name="">
-<part>submit_host_id</part>
-</key>
-</table>
-<table x="1301" y="880" name="manager_host">
-<row name="manager_host_id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="manager_host_hostname" null="1" autoincrement="0">
-<datatype>MEDIUMTEXT</datatype>
-<default>NULL</default></row>
-<key type="PRIMARY" name="">
-<part>manager_host_id</part>
+<part>machine_id</part>
 </key>
 </table>
 </sql>
