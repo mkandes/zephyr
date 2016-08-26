@@ -1,13 +1,12 @@
 README : zephyr
 
-NAME
-
-    zephyr - make your batch system soar to the clouds
+    let HTCondor soar to the cloud
 
 DESCRIPTION
     
-    zephyr is service that provisions cloud-based computing resources
-    to augment fixed-resource batch systems based on user job demand.
+    zephyr is service that automagically provisions cloud-based 
+    computing resources to augment the existing, fixed resources 
+    of an HTCondor batch system based on user job demand.
 
 STATUS
 

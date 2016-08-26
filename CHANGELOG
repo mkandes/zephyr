@@ -2,15 +2,28 @@ CHANGELOG : zephyr
 
 dev
 
-    * creating initial zephyr.db schema 
+    * creating initial default database initialization
+
+2016/08/25 v0.0.2
+
+    + source/zephyr_db_schema.sql; initial database schema for 
+      zephyr.db --- zephyr's sqlite3-based application database 
+    + LICENSE from UCSD Office of Innovation and Commercialization 
+      (Technology Transfer Office)
+    + source/zephyr_db_init.sql file
+    + documentation/xml/zephyr_db_schema.xml; a WWW SQL Designer XML 
+      file of the database schema for zephyr.db; note, however, this 
+      version of file is not currently up-to-date with 
+      zephyr_db_schema.sql; for more information, please see 
+      https://github.com/ondras/wwwsqldesigner
 
 2016/08/17 v0.0.1	
 
     + created generic directory structure, which includes build, data, 
       documentation, documentation/html, documentation/latex, extras, 
       figures, include, source, tarballs, and tests
-    + added README, CHANGELOG, TODO, NOTES, and Makefile
-    + added source/zephyr.py 
+    + README, CHANGELOG, TODO, NOTES, and Makefile
+    + source/zephyr.py 
     + initialized local git repo on ivymike
     + setup remote github repo at https://github.com/mkandes/zephyr
     + made first commit
