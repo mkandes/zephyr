@@ -2,7 +2,7 @@
 
 CREATE TABLE IF NOT EXISTS provider ( 
     provider_id   INTEGER PRIMARY KEY AUTOINCREMENT,
-    provider_name TEXT    NOT NULL 
+    provider_name TEXT    NOT NULL UNIQUE
 );
 
 CREATE TABLE IF NOT EXISTS region (
@@ -249,3 +249,5 @@ CREATE TABLE IF NOT EXISTS machine (
         ON DELETE CASCADE
         ON UPDATE RESTRICT
 );
+
+/* END DATABASE SCHEMA : zephyr.db :: sqlite3                         */

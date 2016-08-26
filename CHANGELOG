@@ -2,7 +2,12 @@ CHANGELOG : zephyr
 
 dev
 
-    * creating initial default database initialization
+    * creating initial python functions for managing zephyr database
+
+2016/08/26 v0.0.4
+
+    + created initial (default) database initialization, which is 
+      available in zephyr_db_init.sql
 
 2016/08/26 v0.0.3
 
